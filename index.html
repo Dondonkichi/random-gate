@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f7f5">
+  <title>STARMYU RANDOM GATE</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f8f7f5;
+      color: #343434;
+      font-family: "Helvetica Neue", sans-serif;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 420px;
+      padding: 35px 24px;
+      text-align: center;
+    }
+
+    .small {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: #aaa49f;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 27px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      line-height: 1.6;
+    }
+
+    .line {
+      width: 35px;
+      height: 1px;
+      background: #c5a9b5;
+      margin: 25px auto;
+    }
+
+    .description {
+      font-size: 12px;
+      line-height: 2;
+      color: #88817e;
+    }
+
+    .loading {
+      margin-top: 35px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #b49ba6;
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #c0bbb7;
+    }
+
+    .dot {
+      animation: blink 1s infinite alternate;
+    }
+
+    @keyframes blink {
+      from { opacity: .2; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <div class="small">WELCOME TO AYNAGI</div>
+
+    <h1>STARMYU<br>RANDOM GATE</h1>
+
+    <div class="line"></div>
+
+    <div class="description">
+      夢を諦める方法なんて、知らない。<br>
+      あなたの運命のキャラクターへ。
+    </div>
+
+    <div class="loading">
+      SELECTING<span class="dot"> . . .</span>
+    </div>
+
+    <div class="footer">
+      ENJOY YOUR STARMYU LIFE
+    </div>
+  </main>
+
+  <script>
+    // STARMYU CHARACTER LIST
+    // 全28キャラクター
+
+    const characters = [
+
+      // team鳳
+      {
+        name: "星谷悠太",
+        url: "https://hstar-mu.com/character/hoshitani.html"
+      },
+      {
+        name: "那雪透",
+        url: "https://hstar-mu.com/character/nayuki.html"
+      },
+      {
+        name: "月皇海斗",
+        url: "https://hstar-mu.com/character/tsukigami.html"
+      },
+      {
+        name: "天花寺翔",
+        url: "https://hstar-mu.com/character/tengenji.html"
+      },
+      {
+        name: "空閑愁",
+        url: "https://hstar-mu.com/character/kuga.html"
+      },
+
+      // team柊
+      {
+        name: "辰己琉唯",
+        url: "https://hstar-mu.com/character/tatsumi.html"
+      },
+      {
+        name: "申渡栄吾",
+        url: "https://hstar-mu.com/character/sawatari.html"
+      },
+      {
+        name: "戌峰誠士郎",
+        url: "https://hstar-mu.com/character/inumine.html"
+      },
+      {
+        name: "虎石和泉",
+        url: "https://hstar-mu.com/character/toraishi.html"
+      },
+      {
+        name: "卯川晶",
+        url: "https://hstar-mu.com/character/ugawa.html"
+      },
+
+      // team楪
+      {
+        name: "揚羽陸",
+        url: "https://hstar-mu.com/character/ageha.html"
+      },
+      {
+        name: "蜂矢聡",
+        url: "https://hstar-mu.com/character/hachiya.html"
+      },
+
+      // team漣
+      {
+        name: "北原廉",
+        url: "https://hstar-mu.com/character/kitahara.html"
+      },
+      {
+        name: "南條聖",
+        url: "https://hstar-mu.com/character/nanjo.html"
+      },
+
+      // 華桜会
+      {
+        name: "四季斗真",
+        url: "https://hstar-mu.com/character/shiki.html"
+      },
+      {
+        name: "冬沢亮",
+        url: "https://hstar-mu.com/character/fuyusawa.html"
+      },
+      {
+        name: "春日野詩音",
+        url: "https://hstar-mu.com/character/kasugano.html"
+      },
+      {
+        name: "入夏将志",
+        url: "https://hstar-mu.com/character/irinatsu.html"
+      },
+      {
+        name: "千秋貴史",
+        url: "https://hstar-mu.com/character/chiaki.html"
+      },
+
+      // 前・華桜会
+      {
+        name: "鳳樹",
+        url: "https://hstar-mu.com/1/sp/character/otori.html"
+      },
+      {
+        name: "柊翼",
+        url: "https://hstar-mu.com/1/sp/character/hiragi.html"
+      },
+      {
+        name: "暁鏡司",
+        url: "https://hstar-mu.com/1/sp/character/akatsuki.html"
+      },
+      {
+        name: "楪＝クリスチアン＝リオン",
+        url: "https://hstar-mu.com/1/sp/character/yuzuriha.html"
+      },
+      {
+        name: "漣朔也",
+        url: "https://hstar-mu.com/1/sp/character/sazanami.html"
+      },
+
+      // アンシエント
+      {
+        name: "月皇遥斗",
+        url: "https://hstar-mu.com/character/haruto.html"
+      },
+      {
+        name: "魚住朝喜",
+        url: "https://hstar-mu.com/character/uozumi.html"
+      },
+      {
+        name: "早乙女律",
+        url: "https://hstar-mu.com/character/saotome.html"
+      },
+      {
+        name: "双葉大我",
+        url: "https://hstar-mu.com/character/futaba.html"
+      }
+
+    ];
+
+    // ランダム抽選
+    const randomIndex = Math.floor(
+      Math.random() * characters.length
+    );
+
+    const selectedCharacter = characters[randomIndex];
+
+    // 抽選後、公式プロフィールへ移動
+    setTimeout(() => {
+      window.location.replace(selectedCharacter.url);
+    }, 1000);
+
+  </script>
+</body>
+</html>
